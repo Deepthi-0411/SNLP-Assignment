@@ -1,0 +1,32 @@
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+",".join(stopwords.words('english'))
+stop_words=set(stopwords.words('english'))
+stop_words
+import nltk
+nltk.download('punkt')
+def remove_stopwords(texts):
+
+    stop_words = set(stopwords.words('english'))
+
+    words = word_tokenize(texts)
+
+    filtered_words = [word for word in words if word.lower() not in stop_words]
+
+    return ' '.join(filtered_words)
+from collections import Counter
+cnt=Counter()
+texts=["She was so excited and excited to the point of being overly excited , that she could hardly contain her excitement."]
+for text in texts:
+  for word in text.split():
+    cnt[word]+=1
+cnt.most_common(10)
+print (cnt.most_common(10))
+
+print("Original Text:")
+print(texts)
+print("\nText after Removing Stopwords:")
+print(clean_texts)
